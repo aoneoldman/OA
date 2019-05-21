@@ -3,6 +3,7 @@ package cn.op.serice.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import cn.op.dao.UserDao;
@@ -12,6 +13,9 @@ import cn.op.serice.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
+	@Autowired
+	private StringRedisTemplate stringRedisTemplate;
+	
 	@Autowired
 	UserDao userDao;
 
